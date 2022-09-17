@@ -93,4 +93,4 @@ def rank():
 
 # insert database related code here
 if __name__ == "__main__":
-    app.run(debug=False,port=7777)
+    app.run(debug=False,port=7777,host="0.0.0.0")
