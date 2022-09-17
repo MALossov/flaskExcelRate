@@ -51,11 +51,14 @@ def getAverage(data, key):
         list.append(data[i][key])
     # 将列表中的数据进行排序
     list.sort()
-    # 去掉列表中的最高分和最低分
-    list.pop()
-    list.pop(0)
-    # 计算列表中的数据的平均分
-    average = sum(list) / len(list)
+    try:
+        # 去掉列表中的最高分和最低分
+        list.pop()
+        list.pop(0)
+        # 计算列表中的数据的平均分
+        average = sum(list) / len(list)
+    except:
+        return '数据太少/有0存在'
     # 返回平均分
     return average
 

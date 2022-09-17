@@ -46,7 +46,7 @@ def checkScore(dict1):
                 # 将错误的字典数组中大于100评价项目和姓名返回
                 return dict1[i]
             # 如果key为思想道德素质分，身心素质分，审美与人文素养分，劳动素养分时，值小于0，返回false
-            if float(dict1[i]['思想道德素质分']) < 0 or float(dict1[i]['身心素质分']) < 0 or float(dict1[i]['审美与人文素养分']) < 0 or float(dict1[i]['劳动素养分']) < 0:
+            if float(dict1[i]['思想道德素质分']) <= 0 or float(dict1[i]['身心素质分']) <= 0 or float(dict1[i]['审美与人文素养分']) <= 0 or float(dict1[i]['劳动素养分']) <= 0:
                 # 将错误的字典数组中小于0评价项目和姓名返回
                 return dict1[i]
     except:
