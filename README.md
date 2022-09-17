@@ -22,6 +22,6 @@
 
 ![1663406548371](image/README/1663406548371.png)
 
-需要放在static文件夹中，并且修改app.py中 `nameList=pyexcel.get_records(file_name=os.path.join(APP_STATIC_STATIC, '10班名单.xlsx'))此句中的表格名称为你放入的表格名称，之后会对该表格中的人数等进行核对。（需要保证表头全部一致）`
+需要放在static文件夹中，并且修改app.py中 `nameList=pyexcel.get_records(file_name=os.path.join(APP_STATIC_STATIC, '10班名单.xlsx'))` 此句中的表格名称为你放入的表格名称，之后会对该表格中的人数等进行核对。（需要保证表头全部一致
 
 打分者那一列都写学号，具体样式的lint在：util/Checker.py: `iflen(str(dict1[i]['打分者'])) !=13orstr(dict1[i]['打分者'])[:10] !='2021010910':`
