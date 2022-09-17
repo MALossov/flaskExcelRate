@@ -4,10 +4,10 @@ import os
 
 import pyexcel
 import time
-result = []
 
 
 def analysis_basic(APP_STATIC_STATIC=None):
+    result = []
     # 获取finalScore文件夹中的所有文件
     files = os.listdir(os.path.join(APP_STATIC_STATIC, 'finalScore'))
     # 遍历finalScore文件夹中的所有文件
