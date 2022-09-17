@@ -9,6 +9,8 @@ import os
 import flask_excel as excel
 import pyexcel
 from flask import Flask, request
+import waitress
+
 
 import zipfile
 
@@ -80,8 +82,12 @@ def download():
 #计算总的排名的入口
 @app.route('/rank')
 def rank():
-    analysis_basic(APP_STATIC_STATIC)
-    analysis_rank(APP_STATIC_STATIC)
+    try:
+        analysis_basic(APP_STATIC_STATIC)
+        analysis_rank(APP_STATIC_STATIC)
+    except:
+        return "数据太少/没有数据，无法自动计算"+strReload
+
     #发送多个static目录下的文件
     zipf = zipfile.ZipFile(os.path.join(APP_STATIC_STATIC,'Rank.zip'), 'w', zipfile.ZIP_DEFLATED)
     for root, dirs, files in os.walk(os.path.join(APP_STATIC_STATIC,'Analisis')):
@@ -93,4 +99,6 @@ def rank():
 
 # insert database related code here
 if __name__ == "__main__":
-    app.run(debug=False,port=7777,host="0.0.0.0")
+    #app.run(debug=False,port=7777,host="0.0.0.0")
+    waitress.serve(app,host="0.0.0.0",port=7777)
+
