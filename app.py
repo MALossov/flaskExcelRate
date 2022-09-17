@@ -9,7 +9,6 @@ import os
 import flask_excel as excel
 import pyexcel
 from flask import Flask, request
-import waitress
 
 
 import zipfile
@@ -61,6 +60,7 @@ def upload_file():
             return '上传的文件中，打分者姓名或不匹配<br />' + str(checkSigner(scoreList)) + strReload
 
         #将上传的文件保存到finalScore文件夹中
+        saveScoreByRaw(scoreList,APP_STATIC_STATIC)
         saveScore(scoreList,APP_STATIC_STATIC)
         return '上传成功'+'<br />可以进行重复提交进行数据覆盖<br /><button onclick="window.history.back();">返回上传</button>\
 <br />本网页由<a href="http:////malossov.gitee.io">MALossov</a>制作'
@@ -101,6 +101,6 @@ def rank():
 
 # insert database related code here
 if __name__ == "__main__":
-    #app.run(debug=False,port=7777,host="0.0.0.0")  #测试环境，启用注释来打开
-    waitress.serve(app,host="0.0.0.0",port=7777)    #生产环境
+    app.run(debug=True,port=7777,host="0.0.0.0")  #测试环境，启用注释来打开
+    #waitress.serve(app,host="0.0.0.0",port=7777)    #生产环境
 

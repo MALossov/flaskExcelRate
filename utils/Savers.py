@@ -28,6 +28,17 @@ def saveScore(dict1, APP_STATIC_STATIC=None):
                             dest_file_name=APP_STATIC_STATIC + '/finalScore/' + dict1[i]['姓名'] + '.xlsx')
 
 
+def saveScoreByRaw(dict1, APP_STATIC_STATIC=None):
+    # 创建文件夹signerRaw，如果已经存在就不创建
+    if not os.path.exists(APP_STATIC_STATIC + '/signerRaw'):
+        os.makedirs(APP_STATIC_STATIC + '/signerRaw')
+    # 将字典中的数据，按照打分者分别创建xlsx文件，文件名为姓名，如果存在就进行数据的覆盖
+    records = []
+    for i in range(len(dict1)):
+        records.append(dict1[i])
+        pyexcel.save_as(records=records,
+                    dest_file_name=APP_STATIC_STATIC + '/signerRaw/' + str(dict1[i]['打分者']) + '.xlsx')
+
 
 
 
