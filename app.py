@@ -68,10 +68,13 @@ def upload_file():
     return '''
     <!doctype html>
     <title>Upload an excel file</title>
-    <h1>Excel file upload(请传入评分表，xlsx形式)</h1>
+    <h1>Excel file uploader</h1>
+    <h3>(请传入评分表,xlsx形式)</h3>
     <form action="" method=post enctype=multipart/form-data><p>
-    <input type=file name=file><input type=submit value=Upload>
+    <input type=file name=file><input type=submit value='向系统中上传表格'>
     </form>
+    <br /><input type="button" onclick='location.href=("download")' value='下载评分样表'/>
+    <input type="button" onclick='location.href=("rank")' value='实时计算最终分数'/>
     <br />本网页由<a href="http:////malossov.gitee.io">MALossov</a>制作
     '''
 #下载在static文件夹中的10班名单.xlsx文件的链接

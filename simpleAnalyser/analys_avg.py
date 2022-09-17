@@ -82,18 +82,18 @@ def analysis_rank(APP_STATIC_STATIC=None):
     moral.sort()
     physical.sort()
     # 查找每个数组中在15%,50%,85%和100%位置的数值
-    labor_15 = labor[int(len(labor) * 0.15)]
-    labor_50 = labor[int(len(labor) * 0.5)]
-    labor_85 = labor[int(len(labor) * 0.88)]
-    aesthetic_15 = aesthetic[int(len(aesthetic) * 0.15)]
-    aesthetic_50 = aesthetic[int(len(aesthetic) * 0.5)]
-    aesthetic_85 = aesthetic[int(len(aesthetic) * 0.88)]
-    moral_15 = moral[int(len(moral) * 0.15)]
-    moral_50 = moral[int(len(moral) * 0.5)]
-    moral_85 = moral[int(len(moral) * 0.88)]
-    physical_15 = physical[int(len(physical) * 0.15)]
-    physical_50 = physical[int(len(physical) * 0.5)]
-    physical_85 = physical[int(len(physical) * 0.88)]
+    labor_15 = labor[4]
+    labor_50 = labor[16]
+    labor_85 = labor[28]
+    aesthetic_15 = aesthetic[4]
+    aesthetic_50 = aesthetic[16]
+    aesthetic_85 = aesthetic[28]
+    moral_15 = moral[4]
+    moral_50 = moral[16]
+    moral_85 = moral[28]
+    physical_15 = physical[4]
+    physical_50 = physical[16]
+    physical_85 = physical[28]
     # 将这几个值和原始数据进行比较，前15%为A，之后35%位B，随后35%为C，最后15%为D
     for i in range(len(data)):
         if data[i]['劳动素养分'] <= labor_15:
