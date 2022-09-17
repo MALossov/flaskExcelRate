@@ -61,7 +61,6 @@ def upload_file():
             return '上传的文件中，打分者姓名或不匹配<br />' + str(checkSigner(scoreList)) + strReload
 
         #将上传的文件保存到finalScore文件夹中
-        saveScoreByRaw(scoreList,APP_STATIC_STATIC)
         saveScore(scoreList,APP_STATIC_STATIC)
         return '上传成功'+'<br />可以进行重复提交进行数据覆盖<br /><button onclick="window.history.back();">返回上传</button>\
 <br />本网页由<a href="http:////malossov.gitee.io">MALossov</a>制作'
